@@ -1,0 +1,48 @@
+# Git
+.git/
+.github/
+.gitignore
+
+# Dependencies
+node_modules/
+web/*/node_modules/
+
+# Build artifacts
+web/build/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Data & Logs
+data/
+logs/
+*.log
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Documentation
+*.md
+!README.md
+docs/
+specs/
+
+# Test
+*_test.go
+*.test
+coverage/
+
+# Misc
+.DS_Store
+Thumbs.db
+prompt.md
+

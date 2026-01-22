@@ -12,7 +12,7 @@ export default function componentStyleOverrides(theme) {
           boxShadow: 'none',
           '&:hover': {
             transform: 'translateY(-2px)',
-            boxShadow: '0 8px 20px -8px rgba(99, 102, 241, 0.4)'
+            boxShadow: '0 8px 20px -8px rgba(76, 175, 80, 0.4)'
           },
           '&:active': {
             transform: 'translateY(0)'
@@ -23,16 +23,16 @@ export default function componentStyleOverrides(theme) {
           }
         },
         contained: {
-          boxShadow: '0 4px 12px -4px rgba(99, 102, 241, 0.4)',
+          boxShadow: '0 4px 12px -4px rgba(76, 175, 80, 0.4)',
           '&:hover': {
-            boxShadow: '0 12px 24px -8px rgba(99, 102, 241, 0.5)'
+            boxShadow: '0 12px 24px -8px rgba(76, 175, 80, 0.5)'
           }
         },
         outlined: {
           borderWidth: '2px',
           '&:hover': {
             borderWidth: '2px',
-            backgroundColor: theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.08)' : 'rgba(99, 102, 241, 0.04)'
+            backgroundColor: theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.08)' : 'rgba(76, 175, 80, 0.04)'
           }
         }
       }
@@ -62,10 +62,10 @@ export default function componentStyleOverrides(theme) {
           padding: '10px 14px',
           transition: 'all 0.2s ease',
           '&:hover': {
-            backgroundColor: theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.15)' : 'rgba(99, 102, 241, 0.08)'
+            backgroundColor: theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.15)' : 'rgba(76, 175, 80, 0.08)'
           },
           '&[aria-selected="true"]': {
-            backgroundColor: theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.2)' : 'rgba(99, 102, 241, 0.12)',
+            backgroundColor: theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.2)' : 'rgba(76, 175, 80, 0.12)',
             fontWeight: '600'
           }
         }
@@ -78,7 +78,7 @@ export default function componentStyleOverrides(theme) {
           transition: 'all 0.3s ease',
           color: theme.darkTextPrimary,
           '&:hover': {
-            backgroundColor: theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.15)' : theme.colors?.grey200,
+            backgroundColor: theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.15)' : theme.colors?.grey200,
             transform: 'scale(1.05)'
           },
           '&:active': {
@@ -244,15 +244,15 @@ export default function componentStyleOverrides(theme) {
             transition: 'all 0.3s ease'
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.4)' : theme.colors?.primaryLight,
+            borderColor: theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.4)' : theme.colors?.primaryLight,
             borderWidth: '2px'
           },
           '&.Mui-focused': {
-            backgroundColor: theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.05)' : 'rgba(99, 102, 241, 0.02)',
+            backgroundColor: theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.05)' : 'rgba(76, 175, 80, 0.02)',
             '& .MuiOutlinedInput-notchedOutline': {
               borderColor: theme.colors?.primaryMain,
               borderWidth: '2px',
-              boxShadow: theme.mode === 'dark' ? '0 0 0 4px rgba(99, 102, 241, 0.1)' : '0 0 0 4px rgba(99, 102, 241, 0.08)'
+              boxShadow: theme.mode === 'dark' ? '0 0 0 4px rgba(76, 175, 80, 0.1)' : '0 0 0 4px rgba(76, 175, 80, 0.08)'
             }
           },
           '&.MuiInputBase-multiline': {
@@ -290,7 +290,7 @@ export default function componentStyleOverrides(theme) {
           height: 20,
           transition: 'all 0.3s ease',
           '&:hover, &.Mui-focusVisible': {
-            boxShadow: '0 0 0 8px rgba(99, 102, 241, 0.16)',
+            boxShadow: '0 0 0 8px rgba(76, 175, 80, 0.16)',
             transform: 'scale(1.1)'
           }
         },
@@ -329,7 +329,7 @@ export default function componentStyleOverrides(theme) {
       styleOverrides: {
         root: {
           color: theme.colors?.primaryDark,
-          background: theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.2)' : theme.colors?.primary200,
+          background: theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.2)' : theme.colors?.primary200,
           fontWeight: 600,
           transition: 'all 0.3s ease',
           '&:hover': {
@@ -393,15 +393,15 @@ export default function componentStyleOverrides(theme) {
         head: {
           color: theme.darkTextSecondary,
           backgroundColor: theme.mode === 'dark'
-            ? 'rgba(99, 102, 241, 0.05)'
+            ? 'rgba(76, 175, 80, 0.05)'
             : theme.headBackgroundColor,
           fontWeight: 700,
           textTransform: 'uppercase',
           fontSize: '0.75rem',
           letterSpacing: '0.05em',
           borderBottom: theme.mode === 'dark'
-            ? '2px solid rgba(99, 102, 241, 0.2)'
-            : '2px solid rgba(99, 102, 241, 0.1)',
+            ? '2px solid rgba(76, 175, 80, 0.2)'
+            : '2px solid rgba(76, 175, 80, 0.1)',
           padding: '18px 16px'
         }
       }
@@ -412,7 +412,7 @@ export default function componentStyleOverrides(theme) {
           transition: 'all 0.2s ease',
           '&:hover': {
             backgroundColor: theme.mode === 'dark'
-              ? 'rgba(99, 102, 241, 0.05)'
+              ? 'rgba(76, 175, 80, 0.05)'
               : theme.headBackgroundColor,
             transform: 'scale(1.001)'
           },
@@ -499,7 +499,7 @@ export default function componentStyleOverrides(theme) {
           color: theme.colors?.warningDark
         },
         standardInfo: {
-          backgroundColor: theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.15)' : theme.colors?.primaryLight,
+          backgroundColor: theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.15)' : theme.colors?.primaryLight,
           color: theme.colors?.primaryDark
         }
       }
@@ -539,7 +539,7 @@ export default function componentStyleOverrides(theme) {
       styleOverrides: `
       * {
         scrollbar-width: thin;
-        scrollbar-color: ${theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.3)' : 'rgba(99, 102, 241, 0.2)'} transparent;
+        scrollbar-color: ${theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.3)' : 'rgba(76, 175, 80, 0.2)'} transparent;
       }
 
       *::-webkit-scrollbar {
@@ -552,13 +552,13 @@ export default function componentStyleOverrides(theme) {
       }
 
       *::-webkit-scrollbar-thumb {
-        background: ${theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.3)' : 'rgba(99, 102, 241, 0.2)'};
+        background: ${theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.3)' : 'rgba(76, 175, 80, 0.2)'};
         border-radius: 10px;
         transition: all 0.3s ease;
       }
 
       *::-webkit-scrollbar-thumb:hover {
-        background: ${theme.mode === 'dark' ? 'rgba(99, 102, 241, 0.5)' : 'rgba(99, 102, 241, 0.4)'};
+        background: ${theme.mode === 'dark' ? 'rgba(76, 175, 80, 0.5)' : 'rgba(76, 175, 80, 0.4)'};
       }
 
       .apexcharts-title-text {

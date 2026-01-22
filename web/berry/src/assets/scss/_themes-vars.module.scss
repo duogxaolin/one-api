@@ -1,19 +1,19 @@
 // paper & background
 $paper: #ffffff;
 
-// primary - Modern Indigo (beautiful & professional)
-$primaryLight: #EEF2FF;
-$primaryMain: #6366f1;
-$primaryDark: #4f46e5;
-$primary200: #a5b4fc;
-$primary800: #3730a3;
+// primary - Material Design Green
+$primaryLight: #E8F5E9;
+$primaryMain: #4CAF50;
+$primaryDark: #388E3C;
+$primary200: #A5D6A7;
+$primary800: #2E7D32;
 
-// secondary - Modern Pink/Rose
-$secondaryLight: #FCE7F3;
-$secondaryMain: #ec4899;
-$secondaryDark: #db2777;
-$secondary200: #f9a8d4;
-$secondary800: #9f1239;
+// secondary - Teal (complementary)
+$secondaryLight: #E0F2F1;
+$secondaryMain: #26A69A;
+$secondaryDark: #00897B;
+$secondary200: #80CBC4;
+$secondary800: #00695C;
 
 // success Colors - Emerald
 $successLight: #d1fae5;
@@ -55,25 +55,25 @@ $tableBorderBottom: #f3f4f6;
 $darkBackground: #0f172a; // Slate 900
 $darkPaper: #1e293b; // Slate 800
 $darkDivider: rgba(241, 245, 249, 0.1);
-$darkSelectedBack: rgba(99, 102, 241, 0.15);
+$darkSelectedBack: rgba(76, 175, 80, 0.15);
 
 // dark 800 & 900
 $darkLevel1: #334155; // Slate 700
 $darkLevel2: #475569; // Slate 600
 
-// primary dark - Indigo
-$darkPrimaryLight: #eef2ff;
-$darkPrimaryMain: #818cf8;
-$darkPrimaryDark: #6366f1;
-$darkPrimary200: #a5b4fc;
-$darkPrimary800: #4f46e5;
+// primary dark - Green
+$darkPrimaryLight: #E8F5E9;
+$darkPrimaryMain: #66BB6A;
+$darkPrimaryDark: #4CAF50;
+$darkPrimary200: #A5D6A7;
+$darkPrimary800: #388E3C;
 
-// secondary dark - Pink
-$darkSecondaryLight: #fce7f3;
-$darkSecondaryMain: #f472b6;
-$darkSecondaryDark: #ec4899;
-$darkSecondary200: #f9a8d4;
-$darkSecondary800: #db2777;
+// secondary dark - Teal
+$darkSecondaryLight: #E0F2F1;
+$darkSecondaryMain: #4DB6AC;
+$darkSecondaryDark: #26A69A;
+$darkSecondary200: #80CBC4;
+$darkSecondary800: #00897B;
 
 // text variants - Better contrast
 $darkTextTitle: #f1f5f9;

@@ -1,0 +1,144 @@
+{
+  "menu": {
+    "dashboard": "总览",
+    "channel": "渠道",
+    "token": "令牌",
+    "redemption": "兑换",
+    "topup": "充值",
+    "user": "用户",
+    "log": "日志",
+    "setting": "设置",
+    "chat": "聊天",
+    "about": "关于",
+    "home": "首页",
+    "profile": "个人中心"
+  },
+  "common": {
+    "submit": "提交",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "save": "保存",
+    "refresh": "刷新",
+    "search": "搜索",
+    "reset": "重置",
+    "confirm": "确认",
+    "enable": "启用",
+    "disable": "禁用",
+    "copy": "复制",
+    "close": "关闭",
+    "loading": "加载中...",
+    "success": "操作成功",
+    "error": "操作失败",
+    "warning": "警告",
+    "info": "提示",
+    "yes": "是",
+    "no": "否",
+    "all": "全部",
+    "none": "无",
+    "unknown": "未知",
+    "actions": "操作",
+    "status": "状态",
+    "name": "名称",
+    "type": "类型",
+    "time": "时间",
+    "detail": "详情",
+    "or": "或",
+    "quota": {
+      "display": "等价金额：${{amount}}",
+      "display_short": "${{amount}}",
+      "unit": "$"
+    }
+  },
+  "header": {
+    "logout": "注销",
+    "login": "登录",
+    "register": "注册",
+    "language": "语言"
+  },
+  "footer": {
+    "description": "All in one 的 OpenAI 接口，整合各种 API 访问方式，开箱即用",
+    "built_with": "使用",
+    "and": "和",
+    "built_by": "由",
+    "built_by_name": "JustSong",
+    "license": "构建，源代码遵循",
+    "mit": "MIT 协议"
+  },
+  "auth": {
+    "login": {
+      "title": "登录",
+      "subtitle": "输入您的凭据以继续",
+      "username": "用户名 / 邮箱",
+      "password": "密码",
+      "button": "登录",
+      "forgot_password": "忘记密码?",
+      "no_account": "没有账户?",
+      "register": "注册",
+      "github": "使用 GitHub 登录",
+      "wechat": "使用微信登录",
+      "lark": "使用飞书登录",
+      "oidc": "使用 OIDC 登录",
+      "validation": {
+        "username_required": "用户名是必填项",
+        "password_required": "密码是必填项"
+      }
+    },
+    "register": {
+      "title": "注册",
+      "subtitle": "创建新账户",
+      "username": "用户名",
+      "password": "密码",
+      "confirm_password": "确认密码",
+      "email": "Email",
+      "verification_code": "验证码",
+      "send_code": "发送验证码",
+      "button": "注册",
+      "has_account": "已有账户?",
+      "login": "登录",
+      "validation": {
+        "username_required": "用户名是必填项",
+        "password_required": "密码是必填项",
+        "confirm_password_required": "确认密码是必填项",
+        "password_mismatch": "两次输入的密码不一致",
+        "email_required": "Email是必填项",
+        "email_invalid": "必须是有效的Email地址",
+        "verification_code_required": "验证码是必填项"
+      },
+      "messages": {
+        "email_empty": "请输入邮箱",
+        "turnstile_wait": "请稍后几秒重试，Turnstile 正在检查用户环境！"
+      }
+    },
+    "reset_password": {
+      "title": "重置密码",
+      "email": "邮箱地址",
+      "button": "提交",
+      "back_to_login": "返回登录"
+    },
+    "forgot_password": {
+      "title": "忘记密码",
+      "email": "邮箱地址",
+      "button": "发送重置链接"
+    }
+  },
+  "home": {
+    "title": "One API",
+    "subtitle": "All in one 的 OpenAI 接口",
+    "description_1": "整合各种 API 访问方式",
+    "description_2": "一键部署，开箱即用",
+    "github_button": "GitHub",
+    "loading_failed": "加载首页内容失败..."
+  },
+  "about": {
+    "title": "关于",
+    "description": "可在设置页面设置关于内容，支持 HTML & Markdown",
+    "repository": "项目仓库地址：",
+    "loading_failed": "加载关于内容失败..."
+  },
+  "topup": {
+    "notice": "充值记录以及邀请记录请在日志中查询。充值记录请在日志中选择类型【充值】查询；邀请记录请在日志中选择【系统】查询"
+  }
+}
+

@@ -1,3 +1,4 @@
+import './i18n';
 import { initVChartSemiTheme } from '@visactor/vchart-semi-theme';
 import React from 'react';
 import ReactDOM from 'react-dom/client';

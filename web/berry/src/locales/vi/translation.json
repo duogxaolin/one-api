@@ -1,0 +1,144 @@
+{
+  "menu": {
+    "dashboard": "Tổng quan",
+    "channel": "Kênh",
+    "token": "Token",
+    "redemption": "Đổi mã",
+    "topup": "Nạp tiền",
+    "user": "Người dùng",
+    "log": "Nhật ký",
+    "setting": "Cài đặt",
+    "chat": "Trò chuyện",
+    "about": "Giới thiệu",
+    "home": "Trang chủ",
+    "profile": "Hồ sơ cá nhân"
+  },
+  "common": {
+    "submit": "Gửi",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "add": "Thêm",
+    "save": "Lưu",
+    "refresh": "Làm mới",
+    "search": "Tìm kiếm",
+    "reset": "Đặt lại",
+    "confirm": "Xác nhận",
+    "enable": "Bật",
+    "disable": "Tắt",
+    "copy": "Sao chép",
+    "close": "Đóng",
+    "loading": "Đang tải...",
+    "success": "Thao tác thành công",
+    "error": "Thao tác thất bại",
+    "warning": "Cảnh báo",
+    "info": "Thông tin",
+    "yes": "Có",
+    "no": "Không",
+    "all": "Tất cả",
+    "none": "Không có",
+    "unknown": "Không xác định",
+    "actions": "Thao tác",
+    "status": "Trạng thái",
+    "name": "Tên",
+    "type": "Loại",
+    "time": "Thời gian",
+    "detail": "Chi tiết",
+    "or": "HOẶC",
+    "quota": {
+      "display": "Tương đương: ${{amount}}",
+      "display_short": "${{amount}}",
+      "unit": "$"
+    }
+  },
+  "header": {
+    "logout": "Đăng xuất",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "language": "Ngôn ngữ"
+  },
+  "footer": {
+    "description": "Giao diện OpenAI tất cả trong một, tích hợp các phương thức truy cập API khác nhau, sẵn sàng sử dụng",
+    "built_with": "Được xây dựng với",
+    "and": "và",
+    "built_by": "được xây dựng bởi",
+    "built_by_name": "JustSong",
+    "license": ", mã nguồn được cấp phép theo",
+    "mit": "Giấy phép MIT"
+  },
+  "auth": {
+    "login": {
+      "title": "Đăng nhập",
+      "subtitle": "Nhập thông tin đăng nhập để tiếp tục",
+      "username": "Tên người dùng / Email",
+      "password": "Mật khẩu",
+      "button": "Đăng nhập",
+      "forgot_password": "Quên mật khẩu?",
+      "no_account": "Chưa có tài khoản?",
+      "register": "Đăng ký",
+      "github": "Đăng nhập bằng GitHub",
+      "wechat": "Đăng nhập bằng WeChat",
+      "lark": "Đăng nhập bằng Lark",
+      "oidc": "Đăng nhập bằng OIDC",
+      "validation": {
+        "username_required": "Tên người dùng là bắt buộc",
+        "password_required": "Mật khẩu là bắt buộc"
+      }
+    },
+    "register": {
+      "title": "Đăng ký",
+      "subtitle": "Tạo tài khoản mới",
+      "username": "Tên người dùng",
+      "password": "Mật khẩu",
+      "confirm_password": "Xác nhận mật khẩu",
+      "email": "Email",
+      "verification_code": "Mã xác minh",
+      "send_code": "Gửi mã",
+      "button": "Đăng ký",
+      "has_account": "Đã có tài khoản?",
+      "login": "Đăng nhập",
+      "validation": {
+        "username_required": "Tên người dùng là bắt buộc",
+        "password_required": "Mật khẩu là bắt buộc",
+        "confirm_password_required": "Xác nhận mật khẩu là bắt buộc",
+        "password_mismatch": "Mật khẩu không khớp",
+        "email_required": "Email là bắt buộc",
+        "email_invalid": "Phải là địa chỉ email hợp lệ",
+        "verification_code_required": "Mã xác minh là bắt buộc"
+      },
+      "messages": {
+        "email_empty": "Vui lòng nhập email",
+        "turnstile_wait": "Vui lòng đợi vài giây, Turnstile đang kiểm tra môi trường!"
+      }
+    },
+    "reset_password": {
+      "title": "Đặt lại mật khẩu",
+      "email": "Địa chỉ email",
+      "button": "Gửi",
+      "back_to_login": "Quay lại đăng nhập"
+    },
+    "forgot_password": {
+      "title": "Quên mật khẩu",
+      "email": "Địa chỉ email",
+      "button": "Gửi liên kết đặt lại"
+    }
+  },
+  "home": {
+    "title": "One API",
+    "subtitle": "Giao diện OpenAI tất cả trong một",
+    "description_1": "Tích hợp các phương thức truy cập API khác nhau",
+    "description_2": "Triển khai một cú nhấp, sẵn sàng sử dụng",
+    "github_button": "GitHub",
+    "loading_failed": "Không thể tải nội dung trang chủ..."
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "description": "Bạn có thể thiết lập nội dung giới thiệu trong trang cài đặt, hỗ trợ HTML & Markdown",
+    "repository": "Kho lưu trữ dự án:",
+    "loading_failed": "Không thể tải nội dung giới thiệu..."
+  },
+  "topup": {
+    "notice": "Vui lòng kiểm tra lịch sử nạp tiền và lịch sử mời trong nhật ký. Để xem lịch sử nạp tiền, chọn loại [Nạp tiền] trong nhật ký; để xem lịch sử mời, chọn [Hệ thống] trong nhật ký"
+  }
+}
+

@@ -1,0 +1,144 @@
+{
+  "menu": {
+    "dashboard": "Dashboard",
+    "channel": "Channel",
+    "token": "Token",
+    "redemption": "Redemption",
+    "topup": "Top Up",
+    "user": "User",
+    "log": "Log",
+    "setting": "Settings",
+    "chat": "Chat",
+    "about": "About",
+    "home": "Home",
+    "profile": "Profile"
+  },
+  "common": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "save": "Save",
+    "refresh": "Refresh",
+    "search": "Search",
+    "reset": "Reset",
+    "confirm": "Confirm",
+    "enable": "Enable",
+    "disable": "Disable",
+    "copy": "Copy",
+    "close": "Close",
+    "loading": "Loading...",
+    "success": "Operation successful",
+    "error": "Operation failed",
+    "warning": "Warning",
+    "info": "Info",
+    "yes": "Yes",
+    "no": "No",
+    "all": "All",
+    "none": "None",
+    "unknown": "Unknown",
+    "actions": "Actions",
+    "status": "Status",
+    "name": "Name",
+    "type": "Type",
+    "time": "Time",
+    "detail": "Detail",
+    "or": "OR",
+    "quota": {
+      "display": "Equivalent: ${{amount}}",
+      "display_short": "${{amount}}",
+      "unit": "$"
+    }
+  },
+  "header": {
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "language": "Language"
+  },
+  "footer": {
+    "description": "All in one OpenAI interface, integrating various API access methods, ready to use out of the box",
+    "built_with": "Built with",
+    "and": "and",
+    "built_by": "built by",
+    "built_by_name": "JustSong",
+    "license": ", source code is licensed under the",
+    "mit": "MIT License"
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "subtitle": "Enter your credentials to continue",
+      "username": "Username / Email",
+      "password": "Password",
+      "button": "Login",
+      "forgot_password": "Forgot password?",
+      "no_account": "No account?",
+      "register": "Register",
+      "github": "Login with GitHub",
+      "wechat": "Login with WeChat",
+      "lark": "Login with Lark",
+      "oidc": "Login with OIDC",
+      "validation": {
+        "username_required": "Username is required",
+        "password_required": "Password is required"
+      }
+    },
+    "register": {
+      "title": "Register",
+      "subtitle": "Create a new account",
+      "username": "Username",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "email": "Email",
+      "verification_code": "Verification Code",
+      "send_code": "Send Code",
+      "button": "Register",
+      "has_account": "Already have an account?",
+      "login": "Login",
+      "validation": {
+        "username_required": "Username is required",
+        "password_required": "Password is required",
+        "confirm_password_required": "Confirm password is required",
+        "password_mismatch": "Passwords do not match",
+        "email_required": "Email is required",
+        "email_invalid": "Must be a valid email address",
+        "verification_code_required": "Verification code is required"
+      },
+      "messages": {
+        "email_empty": "Please enter email",
+        "turnstile_wait": "Please wait a few seconds, Turnstile is checking the environment!"
+      }
+    },
+    "reset_password": {
+      "title": "Reset Password",
+      "email": "Email Address",
+      "button": "Submit",
+      "back_to_login": "Back to Login"
+    },
+    "forgot_password": {
+      "title": "Forgot Password",
+      "email": "Email Address",
+      "button": "Send Reset Link"
+    }
+  },
+  "home": {
+    "title": "One API",
+    "subtitle": "All in one OpenAI Interface",
+    "description_1": "Integrating various API access methods",
+    "description_2": "One-click deployment, ready to use",
+    "github_button": "GitHub",
+    "loading_failed": "Failed to load homepage content..."
+  },
+  "about": {
+    "title": "About",
+    "description": "You can set about content in settings page, supports HTML & Markdown",
+    "repository": "Project Repository:",
+    "loading_failed": "Failed to load about content..."
+  },
+  "topup": {
+    "notice": "Please check top-up records and invitation records in the logs. For top-up records, select type [Top Up] in logs; for invitation records, select [System] in logs"
+  }
+}
+

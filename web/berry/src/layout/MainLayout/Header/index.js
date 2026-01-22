@@ -7,6 +7,7 @@ import { Avatar, Box, ButtonBase } from '@mui/material';
 // project imports
 import LogoSection from '../LogoSection';
 import ProfileSection from './ProfileSection';
+import LanguageSelector from './LanguageSelector';
 import ThemeButton from 'ui-component/ThemeButton';
 
 // assets
@@ -55,6 +56,7 @@ const Header = ({ handleLeftDrawerToggle }) => {
 
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ flexGrow: 1 }} />
+      <LanguageSelector />
       <ThemeButton />
       <ProfileSection />
     </>

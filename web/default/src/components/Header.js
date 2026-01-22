@@ -142,6 +142,7 @@ const Header = () => {
   const languageOptions = [
     { key: 'zh', text: '中文', value: 'zh' },
     { key: 'en', text: 'English', value: 'en' },
+    { key: 'vi', text: 'Tiếng Việt', value: 'vi' },
   ];
 
   const changeLanguage = (language) => {

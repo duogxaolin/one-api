@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/User';
 import { StatusContext } from '../context/Status';
+import { useTranslation } from 'react-i18next';
 
 import { API, getLogo, getSystemName, isAdmin, isMobile, showError } from '../helpers';
 import '../index.css';
@@ -27,6 +28,7 @@ const SiderBar = () => {
   const [userState, userDispatch] = useContext(UserContext);
   const [statusState, statusDispatch] = useContext(StatusContext);
   const defaultIsCollapsed = isMobile() || localStorage.getItem('default_collapse_sidebar') === 'true';
+  const { t } = useTranslation();
 
   let navigate = useNavigate();
   const [selectedKeys, setSelectedKeys] = useState(['home']);
@@ -36,84 +38,84 @@ const SiderBar = () => {
 
   const headerButtons = useMemo(() => [
     {
-      text: '首页',
+      text: t('header.home'),
       itemKey: 'home',
       to: '/',
       icon: <IconHome />
     },
     {
-      text: '渠道',
+      text: t('header.channel'),
       itemKey: 'channel',
       to: '/channel',
       icon: <IconLayers />,
       className: isAdmin() ? 'semi-navigation-item-normal' : 'tableHiddle'
     },
     {
-      text: '聊天',
+      text: t('header.chat'),
       itemKey: 'chat',
       to: '/chat',
       icon: <IconComment />,
       className: localStorage.getItem('chat_link') ? 'semi-navigation-item-normal' : 'tableHiddle'
     },
     {
-      text: '令牌',
+      text: t('header.token'),
       itemKey: 'token',
       to: '/token',
       icon: <IconKey />
     },
     {
-      text: '兑换',
+      text: t('header.redemption'),
       itemKey: 'redemption',
       to: '/redemption',
       icon: <IconGift />,
       className: isAdmin() ? 'semi-navigation-item-normal' : 'tableHiddle'
     },
     {
-      text: '充值',
+      text: t('header.topup'),
       itemKey: 'topup',
       to: '/topup',
       icon: <IconCreditCard />
     },
     {
-      text: '用户',
+      text: t('header.user'),
       itemKey: 'user',
       to: '/user',
       icon: <IconUser />,
       className: isAdmin() ? 'semi-navigation-item-normal' : 'tableHiddle'
     },
     {
-      text: '日志',
+      text: t('header.log'),
       itemKey: 'log',
       to: '/log',
       icon: <IconHistogram />
     },
     {
-      text: '数据看板',
+      text: t('header.detail'),
       itemKey: 'detail',
       to: '/detail',
       icon: <IconCalendarClock />,
       className: localStorage.getItem('enable_data_export') === 'true' ? 'semi-navigation-item-normal' : 'tableHiddle'
     },
     {
-      text: '绘图',
+      text: t('header.midjourney'),
       itemKey: 'midjourney',
       to: '/midjourney',
       icon: <IconImage />,
       className: localStorage.getItem('enable_drawing') === 'true' ? 'semi-navigation-item-normal' : 'tableHiddle'
     },
     {
-      text: '设置',
+      text: t('header.setting'),
       itemKey: 'setting',
       to: '/setting',
       icon: <IconSetting />
     }
     // {
-    //     text: '关于',
+    //     text: t('header.about'),
     //     itemKey: 'about',
     //     to: '/about',
     //     icon: <IconAt/>
     // }
-  ], [localStorage.getItem('enable_data_export'), localStorage.getItem('enable_drawing'), localStorage.getItem('chat_link'), isAdmin()]);
+  ], [t, localStorage.getItem('enable_data_export'), localStorage.getItem('enable_drawing'), localStorage.getItem('chat_link'), isAdmin()]);
 
   const loadStatus = async () => {
     const res = await API.get('/api/status');

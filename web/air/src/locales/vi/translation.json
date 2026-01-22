@@ -1,0 +1,832 @@
+{
+  "header": {
+    "home": "Trang chủ",
+    "channel": "Kênh",
+    "token": "Token",
+    "redemption": "Đổi mã",
+    "topup": "Nạp tiền",
+    "user": "Người dùng",
+    "dashboard": "Tổng quan",
+    "log": "Nhật ký",
+    "setting": "Cài đặt",
+    "about": "Giới thiệu",
+    "chat": "Trò chuyện",
+    "detail": "Bảng dữ liệu",
+    "midjourney": "Vẽ tranh",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "register": "Đăng ký"
+  },
+  "topup": {
+    "title": "Trung tâm nạp tiền",
+    "get_code": {
+      "title": "Lấy mã đổi thưởng",
+      "current_quota": "Hạn mức khả dụng hiện tại",
+      "button": "Lấy mã ngay"
+    },
+    "redeem_code": {
+      "title": "Đổi mã",
+      "placeholder": "Vui lòng nhập mã đổi thưởng",
+      "paste": "Dán",
+      "paste_error": "Không thể truy cập clipboard, vui lòng dán thủ công",
+      "submit": "Đổi ngay",
+      "submitting": "Đang đổi...",
+      "empty_code": "Vui lòng nhập mã đổi thưởng!",
+      "success": "Nạp tiền thành công!",
+      "request_failed": "Yêu cầu thất bại",
+      "no_link": "Quản trị viên chưa thiết lập liên kết nạp tiền!"
+    }
+  },
+  "channel": {
+    "title": "Quản lý kênh",
+    "search": "Tìm kiếm kênh theo ID, tên và khóa...",
+    "balance_notice": "Kênh OpenAI không còn hỗ trợ lấy số dư qua khóa, nên số dư hiển thị là 0. Đối với các loại kênh được hỗ trợ, nhấp vào số dư để làm mới.",
+    "test_notice": "Kiểm tra kênh chỉ hỗ trợ mô hình chat, ưu tiên gpt-3.5-turbo. Nếu không khả dụng, sử dụng mô hình đầu tiên trong danh sách cấu hình của bạn.",
+    "detail_notice": "Nhấp vào nút chi tiết bên dưới để hiển thị số dư và thiết lập các mô hình kiểm tra bổ sung.",
+    "table": {
+      "id": "ID",
+      "name": "Tên",
+      "group": "Nhóm",
+      "type": "Loại",
+      "status": "Trạng thái",
+      "response_time": "Thời gian phản hồi",
+      "balance": "Số dư",
+      "priority": "Ưu tiên",
+      "test_model": "Mô hình kiểm tra",
+      "actions": "Thao tác",
+      "no_name": "Không có",
+      "status_enabled": "Đã bật",
+      "status_disabled": "Đã tắt",
+      "status_auto_disabled": "Đã tắt",
+      "status_disabled_tip": "Kênh này đã bị tắt thủ công",
+      "status_auto_disabled_tip": "Kênh này đã bị tắt tự động",
+      "status_unknown": "Trạng thái không xác định",
+      "not_tested": "Chưa kiểm tra",
+      "priority_tip": "Ưu tiên chọn kênh, cao hơn được ưu tiên",
+      "select_test_model": "Vui lòng chọn mô hình kiểm tra",
+      "click_to_update": "Nhấp để cập nhật",
+      "balance_not_supported": "-"
+    },
+    "buttons": {
+      "test": "Kiểm tra",
+      "delete": "Xóa",
+      "confirm_delete": "Xóa kênh",
+      "enable": "Bật",
+      "disable": "Tắt",
+      "edit": "Sửa",
+      "add": "Thêm kênh mới",
+      "test_all": "Kiểm tra tất cả kênh",
+      "test_disabled": "Kiểm tra kênh đã tắt",
+      "delete_disabled": "Xóa kênh đã tắt",
+      "confirm_delete_disabled": "Xác nhận xóa",
+      "refresh": "Làm mới",
+      "show_detail": "Chi tiết",
+      "hide_detail": "Ẩn chi tiết"
+    },
+    "messages": {
+      "test_success": "Kiểm tra kênh {{name}} thành công, mô hình {{model}}, thời gian {{time}}s, kết quả: {{message}}",
+      "test_all_started": "Đã bắt đầu kiểm tra kênh, vui lòng làm mới trang để xem kết quả.",
+      "delete_disabled_success": "Đã xóa tất cả kênh đã tắt, tổng cộng: {{count}}",
+      "balance_update_success": "Cập nhật số dư kênh {{name}} thành công!",
+      "all_balance_updated": "Đã cập nhật số dư tất cả kênh đang bật!",
+      "operation_success": "Thao tác hoàn tất thành công!"
+    },
+    "edit": {
+      "title_edit": "Cập nhật thông tin kênh",
+      "title_create": "Tạo kênh mới",
+      "type": "Loại",
+      "name": "Tên",
+      "name_placeholder": "Vui lòng nhập tên",
+      "group": "Nhóm",
+      "group_placeholder": "Vui lòng chọn nhóm có thể sử dụng kênh này",
+      "group_addition": "Vui lòng chỉnh sửa hệ số nhóm trong cài đặt hệ thống để thêm nhóm mới:",
+      "models": "Mô hình",
+      "models_placeholder": "Vui lòng chọn mô hình được hỗ trợ bởi kênh này",
+      "model_mapping": "Ánh xạ mô hình",
+      "model_mapping_placeholder": "Tùy chọn, dùng để sửa đổi tên mô hình trong body yêu cầu. Chuỗi JSON với khóa là tên mô hình yêu cầu và giá trị là tên mô hình đích",
+      "system_prompt": "Prompt hệ thống",
+      "system_prompt_placeholder": "Tùy chọn, dùng để thiết lập prompt hệ thống bắt buộc. Sử dụng với mô hình tùy chỉnh & ánh xạ mô hình",
+      "proxy_url": "Proxy",
+      "proxy_url_placeholder": "Tùy chọn, dùng cho các cuộc gọi API qua proxy. Vui lòng nhập URL proxy, định dạng: https://domain.com",
+      "base_url": "URL cơ sở",
+      "base_url_placeholder": "URL cơ sở được yêu cầu bởi OpenAPI SDK",
+      "key": "Khóa",
+      "key_placeholder": "Vui lòng nhập khóa",
+      "batch": "Tạo hàng loạt",
+      "batch_placeholder": "Vui lòng nhập các khóa, mỗi khóa một dòng",
+      "buttons": {
+        "cancel": "Hủy",
+        "submit": "Gửi",
+        "fill_models": "Điền mô hình liên quan",
+        "fill_all": "Điền tất cả mô hình",
+        "clear": "Xóa tất cả mô hình",
+        "add_custom": "Thêm",
+        "custom_placeholder": "Nhập tên mô hình tùy chỉnh"
+      },
+      "messages": {
+        "name_required": "Vui lòng nhập tên kênh và khóa!",
+        "models_required": "Vui lòng chọn ít nhất một mô hình!",
+        "model_mapping_invalid": "Ánh xạ mô hình phải là định dạng JSON hợp lệ!",
+        "update_success": "Cập nhật kênh thành công!",
+        "create_success": "Tạo kênh thành công!"
+      },
+      "spark_version": "Phiên bản mô hình",
+      "spark_version_placeholder": "Vui lòng nhập phiên bản mô hình Spark từ URL API, ví dụ: v2.1",
+      "knowledge_id": "ID cơ sở tri thức",
+      "knowledge_id_placeholder": "Vui lòng nhập ID cơ sở tri thức, ví dụ: 123456",
+      "plugin_param": "Tham số plugin",
+      "plugin_param_placeholder": "Vui lòng nhập tham số plugin (giá trị header X-DashScope-Plugin)",
+      "coze_notice": "Đối với Coze, tên mô hình là Bot ID. Bạn có thể thêm tiền tố `bot-`, ví dụ: `bot-123456`.",
+      "douban_notice": "Đối với Douban, bạn cần truy cập",
+      "douban_notice_link": "Trang suy luận mô hình",
+      "douban_notice_2": "để tạo điểm cuối suy luận, và sử dụng tên điểm cuối làm tên mô hình",
+      "aws_region_placeholder": "vùng, ví dụ: us-west-2",
+      "aws_ak_placeholder": "AWS IAM Access Key",
+      "aws_sk_placeholder": "AWS IAM Secret Key",
+      "vertex_region_placeholder": "Vùng Vertex AI, ví dụ: us-east5",
+      "vertex_project_id": "ID dự án Vertex AI",
+      "vertex_project_id_placeholder": "ID dự án Vertex AI",
+      "vertex_credentials": "JSON thông tin xác thực mặc định ứng dụng Google Cloud",
+      "vertex_credentials_placeholder": "JSON thông tin xác thực mặc định ứng dụng Google Cloud",
+      "user_id": "ID người dùng",
+      "user_id_placeholder": "ID người dùng đã tạo khóa này",
+      "key_prompts": {
+        "default": "Vui lòng nhập khóa xác thực cho kênh này",
+        "zhipu": "Nhập theo định dạng: APIKey|SecretKey",
+        "spark": "Nhập theo định dạng: APPID|APISecret|APIKey",
+        "fastgpt": "Nhập theo định dạng: APIKey-AppId, ví dụ: fastgpt-0sp2gtvfdgyi4k30jwlgwf1i-64f335d84283f05518e9e041",
+        "tencent": "Nhập theo định dạng: AppId|SecretId|SecretKey"
+      }
+    }
+  },
+  "token": {
+    "title": "Quản lý Token",
+    "search": "Tìm kiếm token theo tên...",
+    "table": {
+      "name": "Tên",
+      "status": "Trạng thái",
+      "used_quota": "Hạn mức đã dùng",
+      "remain_quota": "Hạn mức còn lại",
+      "created_time": "Thời gian tạo",
+      "expired_time": "Thời gian hết hạn",
+      "actions": "Thao tác",
+      "no_name": "Không có",
+      "never_expire": "không giới hạn",
+      "unlimited": "Không giới hạn",
+      "status_enabled": "Đã bật",
+      "status_disabled": "Đã tắt",
+      "status_expired": "Đã hết hạn",
+      "status_depleted": "Đã hết hạn mức",
+      "status_unknown": "Trạng thái không xác định"
+    },
+    "buttons": {
+      "copy": "Sao chép",
+      "chat": "Trò chuyện",
+      "delete": "Xóa",
+      "confirm_delete": "Xóa Token",
+      "enable": "Bật",
+      "disable": "Tắt",
+      "edit": "Sửa",
+      "add": "Thêm Token mới",
+      "refresh": "Làm mới"
+    },
+    "edit": {
+      "title_edit": "Cập nhật thông tin Token",
+      "title_create": "Tạo Token mới",
+      "name": "Tên",
+      "name_placeholder": "Vui lòng nhập tên",
+      "models": "Phạm vi mô hình",
+      "models_placeholder": "Vui lòng chọn mô hình được phép, để trống nếu không giới hạn",
+      "ip_limit": "Giới hạn IP",
+      "ip_limit_placeholder": "Vui lòng nhập các mạng con được phép, ví dụ: 192.168.0.0/24, dùng dấu phẩy để phân tách nhiều mạng con",
+      "expire_time": "Thời gian hết hạn",
+      "expire_time_placeholder": "Vui lòng nhập thời gian hết hạn theo định dạng yyyy-MM-dd HH:mm:ss, -1 nếu không giới hạn",
+      "quota_notice": "Lưu ý: Hạn mức token chỉ giới hạn mức sử dụng tối đa của token, mức sử dụng thực tế phụ thuộc vào hạn mức còn lại của tài khoản.",
+      "quota": "Hạn mức",
+      "quota_placeholder": "Vui lòng nhập hạn mức",
+      "buttons": {
+        "never_expire": "Không hết hạn",
+        "expire_1_month": "Hết hạn sau 1 tháng",
+        "expire_1_day": "Hết hạn sau 1 ngày",
+        "expire_1_hour": "Hết hạn sau 1 giờ",
+        "expire_1_minute": "Hết hạn sau 1 phút",
+        "unlimited_quota": "Đặt hạn mức không giới hạn",
+        "cancel_unlimited": "Hủy hạn mức không giới hạn",
+        "submit": "Gửi",
+        "cancel": "Hủy"
+      },
+      "messages": {
+        "update_success": "Cập nhật token thành công!",
+        "create_success": "Tạo token thành công, vui lòng sao chép từ trang danh sách!",
+        "expire_time_invalid": "Định dạng thời gian hết hạn không hợp lệ!"
+      }
+    },
+    "copy_options": {
+      "raw": "Sao chép Token gốc",
+      "ama": "Sao chép liên kết AMA",
+      "opencat": "Sao chép liên kết OpenCat",
+      "next": "Sao chép liên kết NextChat",
+      "lobe": "Sao chép liên kết LobeChat"
+    },
+    "messages": {
+      "copy_success": "Đã sao chép vào clipboard!",
+      "copy_failed": "Không thể sao chép vào clipboard, vui lòng sao chép thủ công. Token đã được điền vào ô tìm kiếm.",
+      "operation_success": "Thao tác hoàn tất thành công!"
+    },
+    "sort": {
+      "placeholder": "Sắp xếp theo",
+      "default": "Thứ tự mặc định",
+      "by_remain": "Sắp xếp theo hạn mức còn lại",
+      "by_used": "Sắp xếp theo hạn mức đã dùng"
+    }
+  },
+  "common": {
+    "quota": {
+      "display": "Tương đương: ${{amount}}",
+      "display_short": "${{amount}}",
+      "unit": "$"
+    }
+  },
+  "redemption": {
+    "title": "Quản lý mã đổi thưởng",
+    "search": "Tìm kiếm mã đổi thưởng theo ID và tên...",
+    "table": {
+      "id": "ID",
+      "name": "Tên",
+      "status": "Trạng thái",
+      "quota": "Hạn mức",
+      "created_time": "Thời gian tạo",
+      "redeemed_time": "Thời gian đổi",
+      "actions": "Thao tác",
+      "no_name": "Không có",
+      "not_redeemed": "Chưa đổi"
+    },
+    "buttons": {
+      "copy": "Sao chép",
+      "delete": "Xóa",
+      "confirm_delete": "Xác nhận xóa",
+      "enable": "Bật",
+      "disable": "Tắt",
+      "edit": "Sửa",
+      "add": "Thêm mã mới",
+      "refresh": "Làm mới"
+    },
+    "status": {
+      "unused": "Chưa sử dụng",
+      "disabled": "Đã tắt",
+      "used": "Đã sử dụng",
+      "unknown": "Không xác định"
+    },
+    "edit": {
+      "title_edit": "Cập nhật mã đổi thưởng",
+      "title_create": "Tạo mã đổi thưởng mới",
+      "name": "Tên",
+      "name_placeholder": "Vui lòng nhập tên",
+      "quota": "Hạn mức",
+      "quota_placeholder": "Vui lòng nhập hạn mức cho mỗi mã đổi thưởng",
+      "count": "Số lượng tạo",
+      "count_placeholder": "Vui lòng nhập số lượng mã cần tạo",
+      "buttons": {
+        "submit": "Gửi",
+        "cancel": "Hủy"
+      }
+    },
+    "messages": {
+      "update_success": "Cập nhật mã đổi thưởng thành công!",
+      "create_success": "Tạo mã đổi thưởng thành công!"
+    }
+  },
+  "log": {
+    "title": "Nhật ký hoạt động",
+    "search": "Tìm kiếm nhật ký...",
+    "usage_details": "Chi tiết sử dụng",
+    "total_quota": "Tổng hạn mức đã dùng",
+    "click_to_view": "Nhấp để xem",
+    "type": {
+      "select": "Chọn loại nhật ký",
+      "all": "Tất cả",
+      "topup": "Nạp tiền",
+      "usage": "Sử dụng",
+      "admin": "Quản trị",
+      "system": "Hệ thống",
+      "test": "Kiểm tra"
+    },
+    "table": {
+      "time": "Thời gian",
+      "channel": "Kênh",
+      "type": "Loại",
+      "model": "Mô hình",
+      "username": "Tên người dùng",
+      "token_name": "Tên Token",
+      "token_name_placeholder": "Tùy chọn",
+      "model_name": "Tên mô hình",
+      "model_name_placeholder": "Tùy chọn",
+      "start_time": "Thời gian bắt đầu",
+      "end_time": "Thời gian kết thúc",
+      "channel_id": "ID kênh",
+      "channel_id_placeholder": "Tùy chọn",
+      "username_placeholder": "Tùy chọn",
+      "prompt_tokens": "Token prompt",
+      "completion_tokens": "Token completion",
+      "quota": "Hạn mức",
+      "detail": "Chi tiết"
+    },
+    "buttons": {
+      "query": "Thao tác",
+      "submit": "Truy vấn",
+      "refresh": "Làm mới"
+    }
+  },
+  "user": {
+    "title": "Quản lý người dùng",
+    "edit": {
+      "title": "Cập nhật thông tin người dùng",
+      "username": "Tên người dùng",
+      "username_placeholder": "Vui lòng nhập tên người dùng mới",
+      "password": "Mật khẩu",
+      "password_placeholder": "Vui lòng nhập mật khẩu mới, tối thiểu 8 ký tự",
+      "display_name": "Tên hiển thị",
+      "display_name_placeholder": "Vui lòng nhập tên hiển thị mới",
+      "group": "Nhóm",
+      "group_placeholder": "Vui lòng chọn nhóm",
+      "group_addition": "Vui lòng chỉnh sửa hệ số nhóm trong cài đặt hệ thống để thêm nhóm mới:",
+      "quota": "Hạn mức còn lại",
+      "quota_placeholder": "Vui lòng nhập hạn mức còn lại mới",
+      "github_id": "Tài khoản GitHub đã liên kết",
+      "github_id_placeholder": "Chỉ đọc, người dùng phải liên kết qua trang cài đặt cá nhân, không thể sửa trực tiếp",
+      "wechat_id": "Tài khoản WeChat đã liên kết",
+      "wechat_id_placeholder": "Chỉ đọc, người dùng phải liên kết qua trang cài đặt cá nhân, không thể sửa trực tiếp",
+      "email": "Tài khoản Email đã liên kết",
+      "email_placeholder": "Chỉ đọc, người dùng phải liên kết qua trang cài đặt cá nhân, không thể sửa trực tiếp",
+      "buttons": {
+        "submit": "Gửi",
+        "cancel": "Hủy"
+      }
+    },
+    "add": {
+      "title": "Tạo tài khoản người dùng mới"
+    },
+    "messages": {
+      "update_success": "Cập nhật thông tin người dùng thành công!",
+      "create_success": "Tạo tài khoản người dùng thành công!",
+      "operation_success": "Thao tác hoàn tất thành công!"
+    },
+    "search": "Tìm kiếm người dùng...",
+    "table": {
+      "id": "ID",
+      "username": "Tên người dùng",
+      "group": "Nhóm",
+      "quota": "Hạn mức",
+      "role_text": "Vai trò",
+      "status_text": "Trạng thái",
+      "actions": "Thao tác",
+      "remaining_quota": "Hạn mức còn lại",
+      "used_quota": "Hạn mức đã dùng",
+      "request_count": "Số lượng yêu cầu",
+      "role_types": {
+        "normal": "Người dùng thường",
+        "admin": "Quản trị viên",
+        "super_admin": "Quản trị viên cấp cao",
+        "unknown": "Vai trò không xác định"
+      },
+      "status_types": {
+        "activated": "Đã kích hoạt",
+        "banned": "Đã cấm",
+        "unknown": "Trạng thái không xác định"
+      },
+      "sort": {
+        "default": "Thứ tự mặc định",
+        "by_quota": "Sắp xếp theo hạn mức còn lại",
+        "by_used_quota": "Sắp xếp theo hạn mức đã dùng",
+        "by_request_count": "Sắp xếp theo số lượng yêu cầu"
+      },
+      "sort_by": "Sắp xếp theo"
+    },
+    "buttons": {
+      "add": "Thêm người dùng mới",
+      "delete": "Xóa",
+      "delete_user": "Xóa người dùng",
+      "enable": "Bật",
+      "disable": "Tắt",
+      "edit": "Sửa",
+      "promote": "Nâng cấp",
+      "demote": "Hạ cấp"
+    }
+  },
+  "dashboard": {
+    "charts": {
+      "requests": {
+        "title": "Xu hướng yêu cầu mô hình",
+        "tooltip": "Số lượng yêu cầu"
+      },
+      "quota": {
+        "title": "Xu hướng sử dụng hạn mức",
+        "tooltip": "Hạn mức đã dùng"
+      },
+      "tokens": {
+        "title": "Xu hướng sử dụng token",
+        "tooltip": "Số lượng token"
+      }
+    },
+    "statistics": {
+      "title": "Thống kê",
+      "tooltip": {
+        "date": "Ngày",
+        "value": "Giá trị"
+      }
+    }
+  },
+  "setting": {
+    "title": "Cài đặt hệ thống",
+    "tabs": {
+      "personal": "Cài đặt cá nhân",
+      "operation": "Cài đặt vận hành",
+      "system": "Cài đặt hệ thống",
+      "other": "Cài đặt khác"
+    },
+    "personal": {
+      "general": {
+        "title": "Cài đặt chung",
+        "system_token_notice": "Lưu ý: Token được tạo ở đây dùng cho quản lý hệ thống, không phải để yêu cầu các dịch vụ liên quan đến OpenAI.",
+        "buttons": {
+          "update_profile": "Cập nhật hồ sơ",
+          "generate_token": "Tạo Token hệ thống",
+          "copy_invite": "Sao chép liên kết mời",
+          "delete_account": "Xóa tài khoản"
+        }
+      },
+      "binding": {
+        "title": "Liên kết tài khoản",
+        "buttons": {
+          "bind_wechat": "Liên kết tài khoản WeChat",
+          "bind_github": "Liên kết tài khoản GitHub",
+          "bind_email": "Liên kết địa chỉ Email",
+          "bind_lark": "Liên kết tài khoản Lark"
+        },
+        "wechat": {
+          "title": "Liên kết WeChat",
+          "description": "Quét mã QR để theo dõi tài khoản chính thức, nhập 'mã xác minh' để lấy mã (có hiệu lực trong 3 phút)",
+          "verification_code": "Mã xác minh",
+          "bind": "Liên kết"
+        },
+        "email": {
+          "title": "Liên kết địa chỉ Email",
+          "email_placeholder": "Nhập địa chỉ email",
+          "code_placeholder": "Mã xác minh",
+          "get_code": "Lấy mã",
+          "get_code_retry": "Gửi lại({{countdown}})",
+          "bind": "Xác nhận liên kết",
+          "cancel": "Hủy"
+        }
+      },
+      "delete_account": {
+        "title": "Thao tác nguy hiểm",
+        "warning": "Bạn đang xóa tài khoản của mình. Tất cả dữ liệu sẽ bị xóa và không thể khôi phục",
+        "confirm_placeholder": "Nhập tên người dùng {{username}} để xác nhận xóa",
+        "buttons": {
+          "confirm": "Xác nhận xóa",
+          "cancel": "Hủy"
+        }
+      }
+    },
+    "system": {
+      "general": {
+        "title": "Cài đặt chung",
+        "server_address": "Địa chỉ máy chủ",
+        "server_address_placeholder": "ví dụ: https://yourdomain.com",
+        "buttons": {
+          "update": "Cập nhật địa chỉ máy chủ"
+        }
+      },
+      "login": {
+        "title": "Cài đặt đăng nhập & đăng ký",
+        "password_login": "Cho phép đăng nhập bằng mật khẩu",
+        "password_register": "Cho phép đăng ký bằng mật khẩu",
+        "email_verification": "Yêu cầu xác minh email khi đăng ký bằng mật khẩu",
+        "github_oauth": "Cho phép đăng nhập & đăng ký qua GitHub OAuth",
+        "wechat_login": "Cho phép đăng nhập & đăng ký qua WeChat",
+        "registration": "Cho phép đăng ký người dùng mới (Khi tắt, người dùng mới không thể đăng ký bằng bất kỳ cách nào)",
+        "turnstile": "Bật xác minh người dùng Turnstile"
+      },
+      "email_restriction": {
+        "title": "Danh sách trắng tên miền email",
+        "subtitle": "Dùng để ngăn người dùng độc hại đăng ký hàng loạt bằng email tạm thời",
+        "enable": "Bật danh sách trắng tên miền email",
+        "allowed_domains": "Tên miền email được phép",
+        "add_domain": "Thêm tên miền email được phép mới",
+        "add_domain_placeholder": "Nhập tên miền email được phép mới",
+        "buttons": {
+          "fill": "Điền",
+          "save": "Lưu cài đặt danh sách trắng tên miền email"
+        }
+      },
+      "smtp": {
+        "title": "Cấu hình SMTP",
+        "subtitle": "Dùng để hỗ trợ gửi email hệ thống",
+        "server": "Địa chỉ máy chủ SMTP",
+        "server_placeholder": "ví dụ: smtp.gmail.com",
+        "port": "Cổng SMTP",
+        "port_placeholder": "Mặc định: 587",
+        "account": "Tài khoản SMTP",
+        "account_placeholder": "Thường là địa chỉ email của bạn",
+        "from": "Email người gửi SMTP",
+        "from_placeholder": "Thường giống với địa chỉ email",
+        "token": "Token truy cập SMTP",
+        "token_placeholder": "Thông tin nhạy cảm sẽ không được gửi đến frontend",
+        "buttons": {
+          "save": "Lưu cài đặt SMTP"
+        }
+      },
+      "github": {
+        "title": "Cấu hình GitHub OAuth App",
+        "subtitle": "Dùng để hỗ trợ đăng nhập và đăng ký qua GitHub",
+        "manage_link": "Nhấp vào đây",
+        "manage_text": "để quản lý GitHub OAuth Apps của bạn",
+        "url_notice": "Đặt Homepage URL là {{server_url}}, và Authorization callback URL là {{callback_url}}",
+        "client_id": "GitHub Client ID",
+        "client_id_placeholder": "Nhập ID GitHub OAuth APP đã đăng ký của bạn",
+        "client_secret": "GitHub Client Secret",
+        "client_secret_placeholder": "Thông tin nhạy cảm sẽ không được gửi đến frontend",
+        "buttons": {
+          "save": "Lưu cài đặt GitHub OAuth"
+        }
+      },
+      "lark": {
+        "title": "Cấu hình Lark OAuth",
+        "subtitle": "Dùng để hỗ trợ đăng nhập và đăng ký qua Lark",
+        "manage_link": "Nhấp vào đây",
+        "manage_text": "để quản lý ứng dụng Lark của bạn",
+        "url_notice": "Đặt Homepage URL là {{server_url}}, và Redirect URL là {{callback_url}}",
+        "client_id": "App ID",
+        "client_id_placeholder": "Nhập App ID",
+        "client_secret": "App Secret",
+        "client_secret_placeholder": "Thông tin nhạy cảm sẽ không được gửi đến frontend",
+        "buttons": {
+          "save": "Lưu cài đặt Lark OAuth"
+        }
+      },
+      "wechat": {
+        "title": "Cấu hình máy chủ WeChat",
+        "subtitle": "Dùng để hỗ trợ đăng nhập và đăng ký qua WeChat",
+        "learn_more": "Tìm hiểu về máy chủ WeChat",
+        "server_address": "Địa chỉ máy chủ WeChat",
+        "server_address_placeholder": "ví dụ: https://yourdomain.com",
+        "token": "Token truy cập máy chủ WeChat",
+        "token_placeholder": "Thông tin nhạy cảm sẽ không được gửi đến frontend",
+        "qrcode": "URL hình ảnh mã QR tài khoản chính thức WeChat",
+        "qrcode_placeholder": "Nhập URL hình ảnh",
+        "buttons": {
+          "save": "Lưu cài đặt máy chủ WeChat"
+        }
+      },
+      "turnstile": {
+        "title": "Cấu hình Turnstile",
+        "subtitle": "Dùng để hỗ trợ xác minh người dùng",
+        "manage_link": "Nhấp vào đây",
+        "manage_text": "để quản lý Turnstile Sites của bạn, khuyến nghị loại Invisible Widget",
+        "site_key": "Turnstile Site Key",
+        "site_key_placeholder": "Nhập Turnstile Site Key đã đăng ký của bạn",
+        "secret_key": "Turnstile Secret Key",
+        "secret_key_placeholder": "Thông tin nhạy cảm sẽ không được gửi đến frontend",
+        "buttons": {
+          "save": "Lưu cài đặt Turnstile"
+        }
+      },
+      "password_login": {
+        "warning": {
+          "title": "Cảnh báo",
+          "content": "Tắt đăng nhập bằng mật khẩu sẽ ngăn tất cả người dùng (bao gồm quản trị viên) chưa liên kết phương thức đăng nhập khác đăng nhập bằng mật khẩu. Xác nhận tắt?",
+          "buttons": {
+            "confirm": "Xác nhận",
+            "cancel": "Hủy"
+          }
+        }
+      }
+    },
+    "operation": {
+      "quota": {
+        "title": "Cài đặt hạn mức",
+        "new_user": "Hạn mức ban đầu cho người dùng mới",
+        "new_user_placeholder": "ví dụ: 100",
+        "pre_consume": "Hạn mức tiêu thụ trước mỗi yêu cầu",
+        "pre_consume_placeholder": "Hoàn trả hoặc tính phí chênh lệch sau yêu cầu",
+        "inviter_reward": "Hạn mức thưởng cho người mời",
+        "inviter_reward_placeholder": "ví dụ: 2000",
+        "invitee_reward": "Hạn mức thưởng khi sử dụng mã mời",
+        "invitee_reward_placeholder": "ví dụ: 1000",
+        "buttons": {
+          "save": "Lưu cài đặt hạn mức"
+        }
+      },
+      "ratio": {
+        "title": "Cài đặt tỷ lệ",
+        "model": {
+          "title": "Tỷ lệ mô hình",
+          "placeholder": "Văn bản JSON với khóa là tên mô hình và giá trị là tỷ lệ"
+        },
+        "completion": {
+          "title": "Tỷ lệ completion",
+          "placeholder": "Văn bản JSON với khóa là tên mô hình và giá trị là tỷ lệ. Các tỷ lệ này là tỷ lệ completion so với prompt, có thể ghi đè tỷ lệ nội bộ của One API"
+        },
+        "group": {
+          "title": "Tỷ lệ nhóm",
+          "placeholder": "Văn bản JSON với khóa là tên nhóm và giá trị là tỷ lệ"
+        },
+        "buttons": {
+          "save": "Lưu cài đặt tỷ lệ"
+        }
+      },
+      "log": {
+        "title": "Cài đặt nhật ký",
+        "enable_consume": "Bật ghi nhật ký tiêu thụ hạn mức",
+        "target_time": "Thời gian mục tiêu",
+        "buttons": {
+          "clean": "Xóa nhật ký lịch sử"
+        }
+      },
+      "monitor": {
+        "title": "Cài đặt giám sát",
+        "max_response_time": "Thời gian phản hồi tối đa",
+        "max_response_time_placeholder": "Tính bằng giây, kênh vượt quá thời gian này khi kiểm tra sẽ bị tắt tự động",
+        "quota_reminder": "Ngưỡng nhắc nhở hạn mức",
+        "quota_reminder_placeholder": "Người dùng sẽ nhận email nhắc nhở khi hạn mức giảm xuống dưới giá trị này",
+        "auto_disable": "Tự động tắt kênh khi thất bại",
+        "auto_enable": "Tự động bật kênh khi thành công",
+        "buttons": {
+          "save": "Lưu cài đặt giám sát"
+        }
+      },
+      "general": {
+        "title": "Cài đặt chung",
+        "topup_link": "Liên kết nạp tiền",
+        "topup_link_placeholder": "ví dụ: Liên kết mua hàng từ trang bán thẻ",
+        "chat_link": "Liên kết trang trò chuyện",
+        "chat_link_placeholder": "ví dụ: Địa chỉ triển khai ChatGPT Next Web",
+        "quota_per_unit": "Hạn mức mỗi đô la",
+        "quota_per_unit_placeholder": "Hạn mức có thể đổi cho mỗi đơn vị tiền tệ",
+        "retry_times": "Số lần thử lại khi thất bại",
+        "retry_times_placeholder": "Số lần thử lại khi thất bại",
+        "display_in_currency": "Hiển thị hạn mức theo định dạng tiền tệ",
+        "display_token_stat": "Hiển thị hạn mức token thay vì hạn mức người dùng trong API thanh toán",
+        "approximate_token": "Sử dụng phương pháp xấp xỉ để ước tính số lượng token",
+        "buttons": {
+          "save": "Lưu cài đặt chung"
+        }
+      }
+    },
+    "other": {
+      "notice": {
+        "title": "Cài đặt thông báo",
+        "content": "Nội dung thông báo",
+        "content_placeholder": "Nhập nội dung thông báo mới ở đây, hỗ trợ Markdown & mã HTML",
+        "buttons": {
+          "save": "Lưu thông báo"
+        }
+      },
+      "system": {
+        "title": "Cài đặt hệ thống",
+        "name": "Tên hệ thống",
+        "name_placeholder": "Vui lòng nhập tên hệ thống",
+        "logo": "URL hình ảnh Logo",
+        "logo_placeholder": "Nhập URL hình ảnh Logo ở đây",
+        "theme": {
+          "title": "Tên giao diện",
+          "link": "Các giao diện có sẵn",
+          "placeholder": "Vui lòng nhập tên giao diện"
+        },
+        "buttons": {
+          "save_name": "Đặt tên hệ thống",
+          "save_logo": "Đặt Logo",
+          "save_theme": "Đặt giao diện (Cần khởi động lại)"
+        }
+      },
+      "content": {
+        "title": "Cài đặt nội dung",
+        "homepage": {
+          "title": "Nội dung trang chủ",
+          "placeholder": "Nhập nội dung trang chủ ở đây, hỗ trợ Markdown & mã HTML. Thông tin trạng thái sẽ không hiển thị sau khi thiết lập. Nếu nhập liên kết, nó sẽ được sử dụng làm thuộc tính src của iframe, cho phép bạn đặt bất kỳ trang web nào làm trang chủ."
+        },
+        "about": {
+          "title": "Giới thiệu hệ thống",
+          "description": "Bạn có thể thiết lập nội dung giới thiệu trong trang cài đặt, hỗ trợ HTML & Markdown",
+          "repository": "Kho lưu trữ dự án:",
+          "loading_failed": "Không thể tải nội dung giới thiệu..."
+        },
+        "footer": {
+          "title": "Chân trang",
+          "placeholder": "Nhập chân trang mới ở đây, để trống để sử dụng chân trang mặc định, hỗ trợ mã HTML"
+        },
+        "buttons": {
+          "save_homepage": "Lưu nội dung trang chủ",
+          "save_about": "Lưu giới thiệu",
+          "save_footer": "Đặt chân trang"
+        }
+      },
+      "copyright": {
+        "notice": "Việc xóa thông báo bản quyền của One API yêu cầu ủy quyền. Việc bảo trì dự án đòi hỏi nhiều nỗ lực, nếu dự án này có ý nghĩa với bạn, vui lòng tích cực hỗ trợ."
+      }
+    }
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "description": "One API là nền tảng quản lý và proxy API mã nguồn mở.",
+    "repository": "Kho lưu trữ: ",
+    "loading_failed": "Tải thất bại"
+  },
+  "footer": {
+    "built_by": "được xây dựng bởi",
+    "built_by_name": "JustSong",
+    "license": ", mã nguồn được cấp phép theo",
+    "mit": "Giấy phép MIT"
+  },
+  "home": {
+    "welcome": {
+      "title": "Chào mừng đến với One API",
+      "description": "One API là hệ thống quản lý và phân phối API LLM giúp bạn quản lý và sử dụng API LLM từ các nhà cung cấp khác nhau tốt hơn.",
+      "login_notice": "Để sử dụng dịch vụ, vui lòng đăng nhập hoặc đăng ký trước."
+    },
+    "system_status": {
+      "title": "Trạng thái hệ thống",
+      "info": {
+        "title": "Thông tin hệ thống",
+        "name": "Tên: ",
+        "version": "Phiên bản: ",
+        "source": "Nguồn: ",
+        "source_link": "Kho lưu trữ GitHub",
+        "start_time": "Thời gian khởi động: "
+      },
+      "config": {
+        "title": "Cấu hình hệ thống",
+        "email_verify": "Xác minh email: ",
+        "github_oauth": "GitHub OAuth: ",
+        "wechat_login": "Đăng nhập WeChat: ",
+        "turnstile": "Kiểm tra Turnstile: ",
+        "enabled": "Đã bật",
+        "disabled": "Đã tắt"
+      }
+    },
+    "loading_failed": "Không thể tải nội dung trang chủ..."
+  },
+  "auth": {
+    "login": {
+      "title": "Đăng nhập người dùng",
+      "username": "Tên người dùng / Email",
+      "password": "Mật khẩu",
+      "button": "Đăng nhập",
+      "forgot_password": "Quên mật khẩu?",
+      "reset_password": "Đặt lại",
+      "no_account": "Chưa có tài khoản?",
+      "register": "Đăng ký",
+      "other_methods": "Phương thức đăng nhập khác",
+      "wechat": {
+        "scan_tip": "Quét mã QR để theo dõi tài khoản chính thức WeChat, nhập 'mã' để lấy mã xác minh (có hiệu lực trong 3 phút)",
+        "code_placeholder": "Mã xác minh"
+      }
+    },
+    "register": {
+      "title": "Đăng ký người dùng mới",
+      "username": "Tên người dùng (tối đa 12 ký tự)",
+      "password": "Mật khẩu (8-20 ký tự)",
+      "confirm_password": "Xác nhận mật khẩu",
+      "email": "Địa chỉ email",
+      "verification_code": "Mã xác minh",
+      "get_code": "Lấy mã",
+      "get_code_retry": "Thử lại ({{countdown}})",
+      "button": "Đăng ký",
+      "has_account": "Đã có tài khoản?",
+      "login": "Đăng nhập"
+    },
+    "reset": {
+      "title": "Đặt lại mật khẩu",
+      "email": "Địa chỉ email",
+      "button": "Gửi",
+      "notice": "Hệ thống sẽ gửi email chứa liên kết đặt lại đến hộp thư của bạn. Vui lòng kiểm tra email.",
+      "confirm": {
+        "title": "Xác nhận đặt lại mật khẩu",
+        "new_password": "Mật khẩu mới",
+        "button": "Gửi",
+        "button_disabled": "Đặt lại mật khẩu hoàn tất",
+        "notice": "Mật khẩu mới đã được tạo, vui lòng nhấp vào trường mật khẩu hoặc nút ở trên để sao chép. Vui lòng đăng nhập và đổi mật khẩu sớm nhất có thể!"
+      }
+    }
+  },
+  "messages": {
+    "success": {
+      "login": "Đăng nhập thành công!",
+      "register": "Đăng ký thành công!",
+      "verification_code": "Mã xác minh đã được gửi, vui lòng kiểm tra email!",
+      "password_reset": "Email đặt lại đã được gửi, vui lòng kiểm tra hộp thư!"
+    },
+    "error": {
+      "login_expired": "Chưa đăng nhập hoặc phiên đã hết hạn, vui lòng đăng nhập lại!",
+      "password_length": "Mật khẩu phải có ít nhất 8 ký tự!",
+      "password_mismatch": "Mật khẩu không khớp",
+      "turnstile_wait": "Vui lòng đợi vài giây, Turnstile đang kiểm tra môi trường!",
+      "root_password": "Vui lòng đổi mật khẩu mặc định ngay lập tức!"
+    },
+    "notice": {
+      "password_copied": "Mật khẩu mới đã được sao chép vào clipboard: {{password}}"
+    }
+  }
+}
+

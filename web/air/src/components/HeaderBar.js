@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/User';
+import { useTranslation } from 'react-i18next';
 
 import { API, getLogo, getSystemName, showSuccess } from '../helpers';
 import '../index.css';
@@ -8,8 +9,14 @@ import '../index.css';
 import fireworks from 'react-fireworks';
 
 import { IconHelpCircle, IconKey, IconUser } from '@douyinfe/semi-icons';
-import { Avatar, Dropdown, Layout, Nav, Switch } from '@douyinfe/semi-ui';
+import { Avatar, Dropdown, Layout, Nav, Select, Switch } from '@douyinfe/semi-ui';
 import { stringToColor } from '../helpers/render';
+
+const languageOptions = [
+  { value: 'zh', label: '中文' },
+  { value: 'en', label: 'English' },
+  { value: 'vi', label: 'Tiếng Việt' }
+];
 
 // HeaderBar Buttons
 let headerButtons = [
@@ -31,6 +38,7 @@ if (localStorage.getItem('chat_link')) {
 
 const HeaderBar = () => {
   const [userState, userDispatch] = useContext(UserContext);
+  const { t, i18n } = useTranslation();
   let navigate = useNavigate();
 
   const [showSidebar, setShowSidebar] = useState(false);
@@ -45,7 +53,7 @@ const HeaderBar = () => {
   async function logout() {
     setShowSidebar(false);
     await API.get('/api/user/logout');
-    showSuccess('注销成功!');
+    showSuccess(t('header.logout') + '!');
     userDispatch({ type: 'logout' });
     localStorage.removeItem('user');
     navigate('/login');
@@ -125,6 +133,12 @@ const HeaderBar = () => {
                   </Dropdown>
                 }
                 <Nav.Item itemKey={'about'} icon={<IconHelpCircle />} />
+                <Select
+                  value={i18n.language?.substring(0, 2) || 'zh'}
+                  onChange={(value) => i18n.changeLanguage(value)}
+                  optionList={languageOptions}
+                  style={{ width: 100, marginRight: 8 }}
+                />
                 <Switch checkedText="🌞" size={'large'} checked={dark} uncheckedText="🌙" onChange={switchMode} />
                 {userState.user ?
                   <>
@@ -132,7 +146,7 @@ const HeaderBar = () => {
                       position="bottomRight"
                       render={
                         <Dropdown.Menu>
-                          <Dropdown.Item onClick={logout}>退出</Dropdown.Item>
+                          <Dropdown.Item onClick={logout}>{t('header.logout')}</Dropdown.Item>
                         </Dropdown.Menu>
                       }
                     >
@@ -144,8 +158,8 @@ const HeaderBar = () => {
                   </>
                   :
                   <>
-                    <Nav.Item itemKey={'login'} text={'登录'} icon={<IconKey />} />
-                    <Nav.Item itemKey={'register'} text={'注册'} icon={<IconUser />} />
+                    <Nav.Item itemKey={'login'} text={t('header.login')} icon={<IconKey />} />
+                    <Nav.Item itemKey={'register'} text={t('header.register')} icon={<IconUser />} />
                   </>
                 }
               </>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Container, Segment } from 'semantic-ui-react';
 import { getFooterHTML, getSystemName } from '../helpers';
@@ -6,6 +7,7 @@ import { getFooterHTML, getSystemName } from '../helpers';
 const Footer = () => {
   const systemName = getSystemName();
   const [footer, setFooter] = useState(getFooterHTML());
+  const { t } = useTranslation();
   let remainCheckTimes = 5;
 
   const loadFooter = () => {
@@ -43,16 +45,13 @@ const Footer = () => {
             >
               {systemName} {process.env.REACT_APP_VERSION}{' '}
             </a>
-            由{' '}
+            {t('footer.built_by')}{' '}
             <a href='https://github.com/songquanpeng' target='_blank'>
-              JustSong
+              {t('footer.built_by_name')}
             </a>{' '}
-            构建，主题 air 来自{' '}
-            <a href='https://github.com/Calcium-Ion' target='_blank'>
-              Calon
-            </a>{' '}，源代码遵循{' '}
+            {t('footer.license')}{' '}
             <a href='https://opensource.org/licenses/mit-license.php'>
-              MIT 协议
+              {t('footer.mit')}
             </a>
           </div>
         )}

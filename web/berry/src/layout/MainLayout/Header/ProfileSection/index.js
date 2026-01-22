@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import {
@@ -31,6 +32,7 @@ import { IconLogout, IconSettings, IconUserScan } from '@tabler/icons-react';
 const ProfileSection = () => {
   const theme = useTheme();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const customization = useSelector((state) => state.customization);
   const { logout } = useLogin();
 
@@ -150,14 +152,14 @@ const ProfileSection = () => {
                       <ListItemIcon>
                         <IconUserScan stroke={1.5} size="1.3rem" />
                       </ListItemIcon>
-                      <ListItemText primary={<Typography variant="body2">设置</Typography>} />
+                      <ListItemText primary={<Typography variant="body2">{t('menu.setting')}</Typography>} />
                     </ListItemButton>
 
                     <ListItemButton sx={{ borderRadius: `${customization.borderRadius}px` }} onClick={handleLogout}>
                       <ListItemIcon>
                         <IconLogout stroke={1.5} size="1.3rem" />
                       </ListItemIcon>
-                      <ListItemText primary={<Typography variant="body2">登出</Typography>} />
+                      <ListItemText primary={<Typography variant="body2">{t('header.logout')}</Typography>} />
                     </ListItemButton>
                   </List>
                 </MainCard>

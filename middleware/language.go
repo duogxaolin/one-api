@@ -14,8 +14,11 @@ func Language() gin.HandlerFunc {
 		if lang == "" {
 			lang = "en"
 		}
-		if strings.HasPrefix(strings.ToLower(lang), "zh") {
+		langLower := strings.ToLower(lang)
+		if strings.HasPrefix(langLower, "zh") {
 			lang = "zh-CN"
+		} else if strings.HasPrefix(langLower, "vi") {
+			lang = "vi"
 		} else {
 			lang = "en"
 		}

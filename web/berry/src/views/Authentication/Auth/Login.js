@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -14,6 +15,7 @@ import Logo from 'ui-component/Logo';
 
 const Login = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
   const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
@@ -34,7 +36,7 @@ const Login = () => {
                       <Grid item>
                         <Stack alignItems="center" justifyContent="center" spacing={1}>
                           <Typography color={theme.palette.primary.main} gutterBottom variant={matchDownSM ? 'h3' : 'h2'}>
-                            登录
+                            {t('auth.login.title')}
                           </Typography>
                         </Stack>
                       </Grid>
@@ -49,7 +51,7 @@ const Login = () => {
                   <Grid item xs={12}>
                     <Grid item container direction="column" alignItems="center" xs={12}>
                       <Typography component={Link} to="/register" variant="subtitle1" sx={{ textDecoration: 'none' }}>
-                        注册
+                        {t('auth.login.register')}
                       </Typography>
                     </Grid>
                   </Grid>

@@ -1,0 +1,6 @@
+{
+  "invalid_input": "Dữ liệu không hợp lệ, vui lòng kiểm tra lại",
+  "send_email_failed": "Gửi email thất bại: ",
+  "invalid_parameter": "Tham số không hợp lệ"
+}
+

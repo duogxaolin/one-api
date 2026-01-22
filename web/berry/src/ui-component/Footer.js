@@ -2,11 +2,13 @@
 import { Link, Container, Box } from '@mui/material';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 // ==============================|| FOOTER - AUTHENTICATION 2 & 3 ||============================== //
 
 const Footer = () => {
   const siteInfo = useSelector((state) => state.siteInfo);
+  const { t } = useTranslation();
 
   return (
     <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '64px' }}>
@@ -18,15 +20,12 @@ const Footer = () => {
             <Link href="https://github.com/songquanpeng/one-api" target="_blank">
               {siteInfo.system_name} {process.env.REACT_APP_VERSION}{' '}
             </Link>
-            由{' '}
+            {t('footer.built_by')}{' '}
             <Link href="https://github.com/songquanpeng" target="_blank">
-              JustSong
+              {t('footer.built_by_name')}
             </Link>{' '}
-            构建，主题 berry 来自{' '}
-            <Link href="https://github.com/MartialBE" target="_blank">
-              MartialBE
-            </Link>{' '}，源代码遵循
-            <Link href="https://opensource.org/licenses/mit-license.php"> MIT 协议</Link>
+            {t('footer.license')}{' '}
+            <Link href="https://opensource.org/licenses/mit-license.php"> {t('footer.mit')}</Link>
           </>
         )}
       </Box>

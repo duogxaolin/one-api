@@ -1,0 +1,55 @@
+/* Light Theme - White + Green (Material Green Palette) */
+body {
+    /* Primary Green Colors */
+    --semi-color-primary: #4CAF50;
+    --semi-color-primary-hover: #66BB6A;
+    --semi-color-primary-active: #388E3C;
+    --semi-color-primary-disabled: #A5D6A7;
+    --semi-color-primary-light-default: #E8F5E9;
+    --semi-color-primary-light-hover: #C8E6C9;
+    --semi-color-primary-light-active: #A5D6A7;
+
+    /* Link Colors */
+    --semi-color-link: #4CAF50;
+    --semi-color-link-hover: #66BB6A;
+    --semi-color-link-active: #388E3C;
+    --semi-color-link-visited: #388E3C;
+
+    /* Success Colors (using green variants) */
+    --semi-color-success: #66BB6A;
+    --semi-color-success-hover: #81C784;
+    --semi-color-success-active: #4CAF50;
+    --semi-color-success-light-default: #E8F5E9;
+    --semi-color-success-light-hover: #C8E6C9;
+    --semi-color-success-light-active: #A5D6A7;
+
+    /* Focus ring */
+    --semi-color-focus-border: #4CAF50;
+}
+
+/* Dark Theme adjustments */
+body[theme-mode="dark"] {
+    /* Primary Green Colors - lighter for dark mode */
+    --semi-color-primary: #66BB6A;
+    --semi-color-primary-hover: #81C784;
+    --semi-color-primary-active: #4CAF50;
+    --semi-color-primary-disabled: #388E3C;
+    --semi-color-primary-light-default: rgba(76, 175, 80, 0.2);
+    --semi-color-primary-light-hover: rgba(76, 175, 80, 0.3);
+    --semi-color-primary-light-active: rgba(76, 175, 80, 0.4);
+
+    /* Link Colors */
+    --semi-color-link: #81C784;
+    --semi-color-link-hover: #A5D6A7;
+    --semi-color-link-active: #66BB6A;
+    --semi-color-link-visited: #66BB6A;
+
+    /* Success Colors */
+    --semi-color-success: #81C784;
+    --semi-color-success-hover: #A5D6A7;
+    --semi-color-success-active: #66BB6A;
+
+    /* Focus ring */
+    --semi-color-focus-border: #66BB6A;
+}
+

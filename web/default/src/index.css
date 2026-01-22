@@ -1,3 +1,9 @@
+/* Green Theme Overrides */
+:root {
+    --primary-green: #4CAF50;
+    --primary-green-dark: #388E3C;
+}
+
 body {
     margin: 0;
     padding-top: 55px;
@@ -6,6 +12,58 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scrollbar-width: none;
+}
+
+/* Primary buttons - Green theme */
+.ui.primary.button,
+.ui.primary.buttons .button {
+    background-color: #4CAF50 !important;
+}
+
+.ui.primary.button:hover,
+.ui.primary.buttons .button:hover {
+    background-color: #388E3C !important;
+}
+
+.ui.primary.button:active,
+.ui.primary.buttons .button:active {
+    background-color: #2E7D32 !important;
+}
+
+/* Links - Green theme */
+a {
+    color: #4CAF50;
+}
+
+a:hover {
+    color: #388E3C;
+}
+
+/* Menu active items */
+.ui.menu .active.item {
+    border-color: #4CAF50 !important;
+}
+
+/* Labels and tags */
+.ui.green.label,
+.ui.green.labels .label {
+    background-color: #4CAF50 !important;
+}
+
+/* Progress bars */
+.ui.green.progress .bar {
+    background-color: #4CAF50 !important;
+}
+
+/* Checkboxes */
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before {
+    border-color: #4CAF50 !important;
+}
+
+.ui.checkbox input:checked ~ .box:after,
+.ui.checkbox input:checked ~ label:after {
+    color: #4CAF50 !important;
 }
 
 body::-webkit-scrollbar {
